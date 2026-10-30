@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f8fc">
+    <title>Consultor médico</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="app">
+        <header class="page-header">
+            <div class="brand-icon" aria-hidden="true">+</div>
+            <div>
+                <h1>Consultor médico</h1>
+                <p>Tu asistente de información médica</p>
+            </div>
+            <div class="availability">
+                <span class="status-dot"></span>
+                Asistente virtual
+            </div>
+        </header>
+
+        <div class="workspace">
+
+            <!-- Parte: ingreso de datos -->
+            <section
+                id="ingreso-de-datos"
+                class="panel input-panel"
+                aria-label="ingreso de datos"
+            >
+                <div class="panel-heading">
+                    <div class="heading-icon" aria-hidden="true">✎</div>
+                    <div>
+                        <h2>Ingreso de datos</h2>
+                        <p>Escribí tu consulta con el detalle que consideres necesario.</p>
+                    </div>
+                </div>
+
+                <form id="consultation-form">
+                    <label for="user-query">¿Qué necesitás consultar?</label>
+
+                    <textarea
+                        id="user-query"
+                        name="consulta"
+                        rows="5"
+                        maxlength="3000"
+                        placeholder="Escribí acá tu duda sobre trámites médicos, turnos, estudios, medicamentos u otro tema específico..."
+                        required
+                    ></textarea>
+
+                    <div class="input-details">
+                        <span id="character-count">0 / 3000 caracteres</span>
+                        <span>Tu consulta se enviará al asistente.</span>
+                    </div>
+
+                    <div class="form-actions">
+                        <p id="form-feedback" role="status" aria-live="polite"></p>
+                        <button id="send-button" type="submit" disabled>
+                            <span id="send-label">Enviar consulta</span>
+                            <span aria-hidden="true">→</span>
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Parte: chat -->
+            <section
+                id="chat"
+                class="panel chat-panel"
+                aria-label="chat"
+            >
+                <div class="panel-heading">
+                    <div class="heading-icon assistant-icon" aria-hidden="true">✦</div>
+                    <div>
+                        <h2>Chat</h2>
+                        <p>Respuesta de tu consultor médico virtual</p>
+                    </div>
+                </div>
+
+                <div class="conversation">
+                    <div class="avatar" aria-hidden="true">+</div>
+
+                    <div
+                        id="response-card"
+                        class="response-card state-idle"
+                        role="status"
+                        aria-live="polite"
+                        aria-atomic="true"
+                    >
+                        <span id="response-kicker" class="response-kicker">
+                            CONSULTOR MÉDICO
+                        </span>
+                        <h3 id="response-title">¿En qué puedo ayudarte?</h3>
+                        <p id="response-text">
+                            Escribí tu consulta en el campo superior y presioná
+                            «Enviar consulta». La respuesta aparecerá en este espacio.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="medical-notice">
+                    <span aria-hidden="true">ⓘ</span>
+                    <p>
+                        Este asistente brinda información general y no reemplaza
+                        la evaluación de un profesional de la salud. Ante una
+                        urgencia, contactá los servicios de emergencia de tu zona.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+
+        <footer class="page-footer">
+            Consultor médico · Asistente informativo
+        </footer>
+    </main>
+</body>
+</html>
